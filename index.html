@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#3a0a06" />
+  <title>HR Jump — Climb the Career Ladder</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- ===================== AUTH ===================== -->
+    <section id="screen-auth" class="screen">
+      <div class="brand">
+        <h1>HR&nbsp;Jump</h1>
+        <p>Hire&nbsp;to&nbsp;Retire — climb the career ladder</p>
+      </div>
+
+      <form id="auth-form" class="card" autocomplete="off" novalidate>
+        <h2 id="auth-title" class="center">Welcome back</h2>
+
+        <label for="auth-username">Username</label>
+        <input id="auth-username" type="text" inputmode="text"
+               autocapitalize="none" autocomplete="username"
+               placeholder="3–20 letters, numbers or _" maxlength="20" required />
+
+        <label for="auth-password">Password</label>
+        <div class="pw-row">
+          <input id="auth-password" type="password" autocomplete="current-password"
+                 placeholder="At least 6 characters" required />
+          <button type="button" id="toggle-pw" class="link">👁 Show</button>
+        </div>
+
+        <button type="submit" id="auth-submit" class="btn">Log in</button>
+        <div id="auth-error" class="error"></div>
+        <p id="auth-switch" class="center muted"></p>
+      </form>
+
+      <footer>Play once a day · Build your streak · Top the board 🔥</footer>
+    </section>
+
+    <!-- ===================== HOME ===================== -->
+    <section id="screen-home" class="screen" hidden>
+      <div class="brand"><h1>HR&nbsp;Jump</h1></div>
+
+      <div class="card">
+        <p class="hello">Hi <span id="home-username" class="name">Player</span> 👋</p>
+        <div class="stat-row">
+          <div class="stat"><div id="home-best" class="big">0</div><div class="lbl">Best</div></div>
+          <div class="stat"><div id="home-streak" class="big">0</div><div class="lbl">Streak 🔥</div></div>
+        </div>
+        <div id="today-result" class="today-result" hidden></div>
+        <p id="play-note" class="play-note"></p>
+        <button id="btn-play" class="btn">▶ Start today's climb</button>
+      </div>
+
+      <div class="card">
+        <div class="lb-head">
+          <h3>🏆 Leaderboard</h3>
+          <button id="btn-refresh-lb" class="link">↻ Refresh</button>
+        </div>
+        <ul id="lb-list" class="lb-list"></ul>
+        <div id="lb-me" hidden></div>
+        <button id="btn-share" class="btn secondary">🔗 Share leaderboard link</button>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;color:var(--gold-bright)">Power-ups</h3>
+        <div class="legend">
+          <div>☕ <b>Coffee Break</b> — slows the climb</div>
+          <div>⚡ <b>Fast-Track</b> — blast through hazards</div>
+          <div>❤️ <b>Wellness Day</b> — extra life</div>
+          <div>🪙 <b>Coin</b> — +25 points</div>
+        </div>
+        <button id="btn-logout" class="btn secondary">Log out</button>
+      </div>
+
+      <footer>Keep your finger down · Lifting off costs a life ✋</footer>
+    </section>
+
+    <!-- ===================== GAME ===================== -->
+    <section id="screen-game" class="screen" hidden>
+      <canvas id="game-canvas"></canvas>
+
+      <div class="hud">
+        <div class="hud-left">
+          <div id="hud-level" class="hud-level">🎓 Intern</div>
+          <div id="hud-powerups" class="hud-powerups"></div>
+        </div>
+        <div class="hud-right">
+          <div id="hud-score" class="hud-score">0</div>
+          <div id="hud-lives" class="hud-lives">❤️❤️❤️</div>
+        </div>
+      </div>
+
+      <div id="game-banner" class="game-toast" hidden></div>
+      <div id="game-toast" class="game-toast" hidden></div>
+
+      <div id="game-wait" class="game-wait">
+        <div class="hand">✋</div>
+        <h2 id="game-wait-title">Hold to climb</h2>
+        <p id="game-wait-msg"></p>
+      </div>
+    </section>
+
+    <!-- ===================== GAME OVER ===================== -->
+    <section id="screen-over" class="screen" hidden>
+      <div class="brand"><h1 id="over-title">Shift over!</h1></div>
+
+      <div class="card">
+        <div id="over-breakdown"></div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;color:var(--gold-bright)">🏆 Leaderboard</h3>
+        <ul id="over-lb-list" class="lb-list"></ul>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-home" class="btn">🏠 Home</button>
+        <button id="btn-over-share" class="btn secondary">🔗 Share</button>
+      </div>
+
+      <footer>Come back tomorrow to grow your streak 🔥</footer>
+    </section>
+
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
