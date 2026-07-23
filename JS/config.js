@@ -8,8 +8,8 @@
 
 export const CONFIG = {
   // From: Supabase Dashboard → Project Settings → API
-  SUPABASE_URL: 'https://YOUR-PROJECT-ref.supabase.co',
-  SUPABASE_ANON_KEY: 'YOUR-ANON-PUBLIC-KEY',
+  SUPABASE_URL: 'https://gzrajjualmsaoryidmga.supabase.co',
+  SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd6cmFqanVhbG1zYW9yeWlkbWdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ4MTk1MzEsImV4cCI6MjEwMDM5NTUzMX0.auxvNdPfnyidExqRgl68QS5l3ezjpS0szOdJiWvb0xg',
 
   // Internal domain used to map a username to an email for Supabase Auth.
   // Users never see this. Do not change after launch (existing logins depend on it).
